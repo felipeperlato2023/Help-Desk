@@ -1,5 +1,6 @@
 package com.felipe.helpdesk.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,10 @@ public class TecnicoService {
 		Optional<Tecnico> obj = repository.findById(id);
 		
 		return obj.orElse(null);
+	}
+	
+	public List<Tecnico> findAll()
+	{
+		return repository.findAll();
 	}
 }
