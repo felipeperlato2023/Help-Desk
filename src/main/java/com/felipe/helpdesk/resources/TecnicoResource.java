@@ -1,6 +1,7 @@
 package com.felipe.helpdesk.resources;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,11 +29,11 @@ public class TecnicoResource {
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<Tecnico>> findAll(){
+	public ResponseEntity<List<TecnicoDTO>> findAll(){
 	     
 		List<Tecnico> list = service.findAll(); 
-		
-		return ResponseEntity.ok().body(list);
+		List<TecnicoDTO> listDTO = list.stream().map(obj -> new TecnicoDTO(obj)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listDTO);
 }
 	
 	
