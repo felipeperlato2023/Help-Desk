@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.felipe.helpdesk.domain.dtos.ClienteDTO;
-import com.felipe.helpdesk.domain.dtos.TecnicoDTO;
 import com.felipe.helpdesk.domain.enums.Perfil;
 
 import jakarta.persistence.Entity;
